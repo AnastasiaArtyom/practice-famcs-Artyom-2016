@@ -1,0 +1,17 @@
+commit c91f7b613aa1389740a83bad0cfd7f56bbbcb86a
+Author: Nastya <anastasia.artyom@gmail.com>
+Date:   Tue Feb 16 20:33:10 2016 +0300
+
+    new status
+
+commit 4e08d99a54480ce5010fd2f94cde961135e884c4
+Author: Nastya <anastasia.artyom@gmail.com>
+Date:   Tue Feb 16 20:30:12 2016 +0300
+
+    Add .gitignore
+
+commit cd5b3bb637b3489ddbac7421d99b84b87925eef3
+Author: Nastya <anastasia.artyom@gmail.com>
+Date:   Thu Feb 11 22:09:48 2016 +0300
+
+    first test commit
