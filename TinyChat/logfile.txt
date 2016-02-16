@@ -1,0 +1,4 @@
+INFO: Log started
+INFO: User asked: Load chat from file
+INFO: Total number of messages: 3, added from keyboard: 0, deleted: 0.
+INFO: User asked: Show all messages in chronological order
