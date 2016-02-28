@@ -4,112 +4,10 @@ import javax.json.*;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
 import java.io.StringReader;
-import java.text.SimpleDateFormat;
-import java.util.UUID;
+import java.util.*;
 import java.io.File;
-import java.util.ArrayList;
-import java.util.TreeSet;
-import java.util.Comparator;
-import java.util.Collections;
-import java.util.Date;
-import java.util.Scanner;
-
 
 public class ChatHistory {
-
-    private class HistoryItemId implements Comparable<HistoryItemId> {
-
-        public HistoryItemId() {
-            id = UUID.randomUUID();
-        }
-
-        public HistoryItemId(String id) throws IllegalArgumentException {
-            this.id = UUID.fromString(id);
-        }
-
-        @Override
-        public int compareTo(HistoryItemId other) {
-            return this.id.compareTo(other.id);
-        }
-
-        @Override
-        public String toString() {
-            return id.toString();
-        }
-
-        private UUID id;
-
-    }
-
-    private class HistoryItem {
-
-        public HistoryItem() {
-
-        }
-
-        public HistoryItem(String author, String message) {
-            this.author = author;
-            this.message = message;
-            this.id = new HistoryItemId();
-            this.timestamp = new Date().getTime();
-        }
-
-        // should be used only to compare id's
-        public HistoryItem(HistoryItemId id) {
-            this.id = id;
-        }
-
-        public HistoryItem parseFromJson(JsonObject jsonObject) {
-            author = jsonObject.getString("author");
-            message = jsonObject.getString("message");
-            timestamp = jsonObject.getJsonNumber("timestamp").longValue();
-            id = new HistoryItemId(jsonObject.getString("id"));
-            return this;
-        }
-
-        public JsonObject getJson() {
-            return Json.createObjectBuilder()
-                    .add("author", author)
-                    .add("message", message)
-                    .add("id", id.toString())
-                    .add("timestamp", timestamp).build();
-        }
-
-        public StringBuilder printPretty(StringBuilder streamB) {
-            streamB.append("Author: ");
-            streamB.append(author);
-            streamB.append("\nTime: ");
-            streamB.append(new SimpleDateFormat().format(new Date(timestamp)));
-            streamB.append("\nId: ");
-            streamB.append(id);
-            streamB.append("\nMessage:\n");
-            streamB.append(message);
-            streamB.append("\n");
-            return streamB;
-        }
-
-        public long getTimestamp() {
-            return timestamp;
-        }
-
-        public HistoryItemId getId() {
-            return id;
-        }
-
-        public String getAuthor() {
-            return author;
-        }
-
-        public String getMessage() {
-            return message;
-        }
-
-        private String author;
-        private String message;
-        private long timestamp;
-        private HistoryItemId id;
-
-    }
 
     public ChatHistory() {
         numItems = 0;
@@ -193,8 +91,7 @@ public class ChatHistory {
     }
 
     public void addMessage(String author, String message) {
-        while (!chat.add(new HistoryItem(author, message))) {
-        }
+        chat.add(new HistoryItem(author, message));
         ++numItems;
         ++numItemsAdded;
     }
@@ -247,21 +144,12 @@ public class ChatHistory {
         Collections.sort(chatList, new Comparator<HistoryItem>() {
             @Override
             public int compare(HistoryItem first, HistoryItem second) {
-                long diff = first.getTimestamp() - second.getTimestamp();
-                if (diff == 0) {
-                    return 0;
-                } else if (diff > 0) {
-                    return 1;
-                } else
-                    return -1;
+                return first.getTimestamp().compareTo(second.getTimestamp());
             }
         });
         return chatList;
     }
 
-    private abstract class Predicate {
-        public abstract boolean condition(HistoryItem item);
-    }
 
     private ArrayList<HistoryItem> getFilteredBy(Predicate predicate) {
         ArrayList<HistoryItem> chatList = new ArrayList<>();
@@ -284,7 +172,7 @@ public class ChatHistory {
         return false;
     }
 
-    private TreeSet<HistoryItem> chat;
+    private Set<HistoryItem> chat;
     private int numItems;
     private int numItemsAdded;
     private int numItemsDeleted;
