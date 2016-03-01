@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">   
+    <link rel="stylesheet" href="main.css"/>
+    <link rel="stylesheet" href="normalize.css"/>
+</head>
+<body>
+    <div id='header'>
+        <img class='chatLogo' id='chatLogoOnline' src='chatLogo.png' />
+	<img class='chatLogo' id='chatLogoOffline' src='chatLogoOffline.png' />
+	<div id='loginArea'>
+            <input id="loginTextArea" type="text" class="main-input" placeholder="Input name"/>
+            <button id="loginButton">Log in</button>	    
+	</div>
+    </div>
+    <div class = 'chatMembers' >
+	<div class="coversationList">
+	<ul>
+          	<li><div class = "statusOnline"></div><img src="somebodyPhoto1.jpg"><a href="#"><span>somebody1</span></a></li>
+		<li><div  class = "statusOnline"></div><img src="somebodyPhoto2.jpg"><a href="#"><span>somebody2</span></a></li>
+		<li><div  class = "statusOffline"></div><img src="me.jpg"><a href="#"><span>Me</span></a></li>
+	</ul>
+        </div>
+    </div>
+    <div class = "chat-area">
+	<div class="chat-list">
+	<ul>
+	    <li class="me">
+		<div class="name">
+		    <span class="">Me</span>
+		</div>
+		<div class="message">
+		    <p>Hello!</p>
+		    <span class="msg-time">5:00 pm</span>
+		    <span class="msg-time-edited">edited 5:08 pm</span>
+		</div>
+		    <div class = "myButtons">
+		    <button id = "deleteButton">
+		    </button>
+		    <button id = "editButton">
+		</button>
+		</div>
+            </li>
+	    <li class="">
+	        <div class="name">
+		    <span class="">Somebody1</span>
+		</div>
+		<div class="message">
+		    <p>Hello.</p>
+		    <span class="msg-time">5:01 pm</span>
+		</div>
+		<div class = "myButtons">
+		    <button id = "deleteButton">
+		    </button>
+		    <button id = "editButton">
+		    </button>
+		</div>
+	    </li>
+	    <li class="removed">
+                 <div class="name">
+	             <span class="">Somebody1</span>
+		 </div>
+		 <div class="message">
+		     <p>Message was removed.</p>
+		     <span class="msg-time">5:01 pm</span>
+		</div>
+		<div class = "myButtons">
+		     <button id = "deleteButton">
+		     </button>
+		     <button id = "editButton">
+		     </button>
+		 </div>
+	    </li>
+	    <li class="">
+	        <div class="name">
+	            <span class="">Somebody1</span>
+		</div>
+		<div class="message">
+		    <p>Blalalalalalalalala.</p>
+		    <span class="msg-time">5:04 pm</span>
+		</div>
+		<div class = "myButtons">
+		     <button id = "deleteButton">
+		     </button>
+		     <button id = "editButton">
+		     </button>
+		 </div>
+	    </li>
+	      <li class="me">
+		<div class="name">
+		    <span class="">Me</span>
+		</div>
+		<div class="message">
+		    <p>Hello!</p>
+		    <span class="msg-time">5:00 pm</span>
+		</div>
+		    <div class = "myButtons">
+		    <button id = "deleteButton">
+		    </button>
+		    <button id = "editButton">
+		</button>
+		</div>
+            </li>
+	    <li class="">
+	        <div class="name">
+		    <span class="">Somebody1</span>
+		</div>
+		<div class="message">
+		    <p>Hello.</p>
+		    <span class="msg-time">5:01 pm</span>
+		</div>
+		<div class = "myButtons">
+		    <button id = "deleteButton">
+		    </button>
+		    <button id = "editButton">
+		    </button>
+		</div>
+	    </li>
+	    <li class="">
+                 <div class="name">
+	             <span class="">Somebody1</span>
+		 </div>
+		 <div class="message">
+		     <p> Hello.</p>
+		     <span class="msg-time">5:01 pm</span>
+		</div>
+		<div class = "myButtons">
+		     <button id = "deleteButton">
+		     </button>
+		     <button id = "editButton">
+		     </button>
+		 </div>
+	    </li>
+	    <li class="">
+	        <div class="name">
+	            <span class="">Somebody1</span>
+		</div>
+		<div class="message">
+		    <p>Blalalalalalalalala.</p>
+		    <span class="msg-time">5:04 pm</span>
+		</div>
+		<div class = "myButtons">
+		     <button id = "deleteButton">
+		     </button>
+		     <button id = "editButton">
+		     </button>
+		 </div>
+	    </li>
+	      <li class="me">
+		<div class="name">
+		    <span class="">Me</span>
+		</div>
+		<div class="message">
+		    <p>Hello!</p>
+		    <span class="msg-time">5:00 pm</span>
+		</div>
+		    <div class = "myButtons">
+		    <button id = "deleteButton">
+		    </button>
+		    <button id = "editButton">
+		</button>
+		</div>
+            </li>
+	    <li class="">
+	        <div class="name">
+		    <span class="">Somebody1</span>
+		</div>
+		<div class="message">
+		    <p>Hello.</p>
+		    <span class="msg-time">5:01 pm</span>
+		</div>
+		<div class = "myButtons">
+		    <button id = "deleteButton">
+		    </button>
+		    <button id = "editButton">
+		    </button>
+		</div>
+	    </li>
+	    <li class="">
+                 <div class="name">
+	             <span class="">Somebody1</span>
+		 </div>
+		 <div class="message">
+		     <p> Hello.</p>
+		     <span class="msg-time">5:01 pm</span>
+		</div>
+		<div class = "myButtons">
+		     <button id = "deleteButton">
+		     </button>
+		     <button id = "editButton">
+		     </button>
+		 </div>
+	    </li>
+	    <li class="">
+	        <div class="name">
+	            <span class="">Somebody1</span>
+		</div>
+		<div class="message">
+		    <p>Blalalalalalalalala.</p>
+		    <span class="msg-time">5:04 pm</span>
+		</div>
+		<div class = "myButtons">
+		     <button id = "deleteButton">
+		     </button>
+		     <button id = "editButton">
+		     </button>
+		 </div>
+	    </li>
+	      <li class="me">
+		<div class="name">
+		    <span class="">Me</span>
+		</div>
+		<div class="message">
+		    <p>Hello!</p>
+		    <span class="msg-time">5:00 pm</span>
+		</div>
+		    <div class = "myButtons">
+		    <button id = "deleteButton">
+		    </button>
+		    <button id = "editButton">
+		</button>
+		</div>
+            </li>
+	    <li class="">
+	        <div class="name">
+		    <span class="">Somebody1</span>
+		</div>
+		<div class="message">
+		    <p>Hello.</p>
+		    <span class="msg-time">5:01 pm</span>
+		</div>
+		<div class = "myButtons">
+		    <button id = "deleteButton">
+		    </button>
+		    <button id = "editButton">
+		    </button>
+		</div>
+	    </li>
+	    <li class="others">
+                 <div class="name">
+	             <span class="">Somebody1</span>
+		 </div>
+		 <div class="message">
+		     <p> Hello.</p>
+		     <span class="msg-time">5:01 pm</span>
+		</div>
+		<div class = "myButtons">
+		     <button id = "deleteButton">
+		     </button>
+		     <button id = "editButton">
+		     </button>
+		 </div>
+	    </li>
+	    <li class="">
+	        <div class="name">
+	            <span class="">Somebody1</span>
+		</div>
+		<div class="message">
+		    <p>Blalalalalalalalala.</p>
+		    <span class="msg-time">5:04 pm</span>
+		</div>
+		<div class = "myButtons">
+		     <button id = "deleteButton">
+		     </button>
+		     <button id = "editButton">
+		     </button>
+		 </div>
+	    </li>
+
+
+	</ul>
+	</div>
+	<div class="input-area">
+		<div class="inputZone">
+			<input type="text" value="Enter your message">
+		</div>
+		<button id = "sendButton">Send</button>
+		
+	</div>
+</div>
+    
+</body>
+</html>

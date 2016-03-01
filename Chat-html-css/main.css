@@ -1,0 +1,217 @@
+body{
+	background-color:beige;
+	font-family: 'Open Sans', Arial, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+}
+#header{
+	position:inherit;
+}
+
+#chatLogoOffline{
+	display: none;
+}
+.chatLogo{
+	width: 120px;
+	padding: 2%;
+}
+.chat-area {	
+	
+	position:absolute;
+	
+	padding:0.5%;
+	padding-bottom:0.5%;
+	left: 20%;
+	right: 10%;
+	width: 70%;
+  height: 100%;
+}
+.chat-list{
+	max-height: 80%;
+	overflow-y:scroll;
+}
+.chat-area>.chat-list>ul>li{
+	border: 0.5px solid gold;
+	
+}
+.chat-area ul > li{
+	border-top: px solid wheat;
+	overflow:hidden;
+	position: relative;
+}
+.chat-area ul .name{
+	padding: 10px;
+	text-align:center;
+	width: 100px;
+	float: left;
+	color: #5d7188;
+	
+}
+.chat-area ul > li.me{
+	background-color: #e4eaee;
+}
+.chat-area ul > li.removed {
+	background-color: #FFD760;
+}
+.chat-area ul > li.removed > div >p{
+	font-style: italic;
+	color: grey;
+}
+
+.chat-area ul .message{
+	padding: 14px;
+	border-left: 1px solid #cfdae1;
+	float: left;
+	color: #333f4d;
+	width: 214px;
+}
+.chat-area ul .message > p{
+	line-height: 20px;
+}
+.chat-area ul .message .msg-time{
+	position: absolute;
+	top:45%;
+	bottom: 30%;
+	right: 7%;
+	color: gray;
+	font-size: 10px;
+}
+.msg-time-edited{
+	position: absolute;
+	top:45%;
+	bottom: 30%;
+	right: 14%;
+	color: gray;
+	font-size: 10px
+	
+}
+.chat-area >.chat-list >ul>li>.myButtons{
+	position:absolute;
+	
+	width: 14pt;
+	padding: 1%;
+	right: 0;
+	top: -20%;
+}
+
+.chat-area >.chat-list >ul>li>.myButtons>#deleteButton{
+   height: 13pt;
+	 width: 13pt;
+   background-image: url("deleteButton.jpg");
+	 background-size: 100%;
+}
+.chat-area >.chat-list >ul>li>.myButtons>#editButton{
+   height: 13pt;
+	 width: 13pt;
+   background-image: url("editButton.jpg");
+	 background-size: 100%;
+}
+
+.chat-area ul .message > p{
+	line-height: 20px;
+}
+
+
+
+.chat-area>.input-area{
+	background-color:  #e4eaee;
+	padding: 2%;
+	border: 1px solid gold; 
+	position: :absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 25px;
+	border-radius: 5px;
+}
+.input-area>.inputZone>input{
+	
+	line-height: 30px;
+	border:aliceblue;
+	position: :absolute;
+	margin-bottom: -40%;
+	border-radius: 7px;
+	outline: none;
+	color: goldenrod;
+	width: 80%;
+}
+
+.input-area > .inputZone{
+	float:left;
+	width: 80%;
+
+}
+.input-area>button{
+	float:right;
+	height: 35px;
+	width: 80px;
+	
+}
+
+.chatMembers{
+	float: left;
+	position: absolute;
+	height: 100%;
+	width: 18%;
+	background-color: #354678;
+	border:1px solid gold;
+}
+.chatMembers > #headerParticipants{
+	font-style:italic;
+	font-size: 20px;
+	margin-left: 8%;
+	color: gold;
+	
+}
+.chatMembers >.coversationList>ul{
+	list-style-type: none;	
+	padding: 20px;
+	
+	
+	border-bottom: 2px solid gold;
+	color: red;
+}
+.chatMembers >.coversationList>ul>li>img{
+	width: 50px;
+	height: 50px;
+	
+	border-radius: 225px;
+	border: 1px solid white;
+}
+.chatMembers>.coversationList>ul>li span{
+	color:white;
+	line-height:15px;
+	font-size: 15px;
+	//display: block;
+	
+	position: relative;
+}
+.chatMembers>.coversationList>ul>li{
+		padding: 3%;
+	 border-bottom: 1px solid grey;
+	width: 100%;
+}
+.statusOnline:before {
+   content: '';
+   display: inline-block;
+   height: 16pt;
+	 width: 16pt;
+   background-image: url("online.png");
+	 background-size: 100%;
+}
+.statusOffline:before{
+   content: '';
+   display: inline-block;
+   height: 16pt;
+	 width: 16pt;
+   background-image: url("offline.png");
+	 background-size: 100%;
+}
+#header{
+	background-color: #354678;
+	padding:
+}
+#header>#loginArea{
+	float: right;
+	padding: 3%;
+}
