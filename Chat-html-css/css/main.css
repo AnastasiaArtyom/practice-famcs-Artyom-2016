@@ -1,0 +1,32 @@
+body{
+	background-color:#FFFAFA;
+	font-family: 'Open Sans', Arial, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+}
+#header{
+	position:inherit;
+}
+
+#chatLogoOffline{
+	display: none;
+}
+.chatLogo{
+	width: 12%;
+	padding: 2%;
+}
+#loginArea{
+	margin-top: 1%;
+	margin-right: 5%;
+	
+}
+
+
+#header{
+	background-color: #483D8B;
+}
+#header>#loginArea{
+	float: right;
+	padding: 3%;
+	
+}

@@ -1,4 +1,4 @@
-@charset "utf-8";
+.chat-area >.chat-list > div@charset "utf-8";
 
 code, kbd, pre, samp, tt, var {
 font: 14px/18px Consolas, "Courier New", monospace;
