@@ -12,7 +12,9 @@
 	border-radius: 10px;
 	border: 0.5px solid  #D8BFD8;
 	max-height: 80%;
+	min-height: 50%;
 	overflow-y:scroll;
+	overflow-x:hidden;
 }
 .message{
 	width:-moz-fit-content;
@@ -53,6 +55,20 @@
 	max-width: 85%;
 	min-width: 55%;
 }
+.meRemoved {
+	background-color: #FFD760;
+	border-radius: 15px;
+	margin: 1%;
+	float:right;
+	padding: 2%;
+	margin: 1%;	
+	font-style: italic;
+	overflow: right;
+	max-width: 85%;
+	min-width: 55%;
+	color: grey;
+
+}
 .chat-area > .message > p{
 	line-height: 20px;
 }
@@ -80,13 +96,13 @@
 	right: 50px;
 }
 
-.myButtons>#deleteButton{
+.myButtons>.deleteButton{
    height: 13pt;
 	 width: 13pt;
    background-image: url("../src/delete.png");
 	 background-size: 100%;
 }
-.myButtons>#editButton{
+.myButtons>.editButton{
    height: 13pt;
 	 width: 13pt;
    background-image: url("../src/edit.png");

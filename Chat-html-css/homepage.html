@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/chat-area.css"/>
     <link rel="stylesheet" href="css/chatMembers.css"/>
     <link rel="stylesheet" href="css/adaptive.css"/>
+    
 </head>
 <body>
     <div id='header'>
@@ -14,7 +15,7 @@
 	<img class='chatLogo' id='chatLogoOffline' src='src/chatLogoOffline.png' />
 	<div id='loginArea'>
             <input id="loginTextArea" type="text" class="main-input" placeholder="Input name"/>
-            <button id="loginButton">Log in</button>	    
+            <button id="loginButton" onclick = login()>Log in</button>	    
 	</div>
     </div>
     <main>
@@ -29,19 +30,19 @@
             </div>
         </div>
         <div class = "chat-area">
-	    <div class="chat-list">
-	        <div class="message">
+	    <div class="chat-list" id="chat-list">
+	        <div class="message" id = 'mes_id0'>
 		   
 		    <div class = "me">
 		     <img src="src/me.jpg">
 			    <div class = "myButtons">
-				<button id = "deleteButton"></button>
-				<button id = "editButton"></button>
+				<button class = "deleteButton" onclick = deleteMessage(this)></button>
+				<button class = "editButton" onclick = editMessage(this)></button>
 			    </div>
 			    <div class="name">
 				<span class="author">Me</span>
 			    </div>
-			    <div class="message-text">
+			    <div class="message-text" id = 'message-text'>
 				<p>У лукоморья дуб зеленый; Златая цепь на дубе том:И днем и ночью кот ученый Всё ходит по цепи кругом;</p>
 				<span class="msg-time">5:00 pm</span>
 				<span class="msg-time-edited">edited 5:08 pm</span>
@@ -49,63 +50,63 @@
 			    
 		    </div>
                </div>
-	        <div class="message">
+	        <div class="message" id = 'mes_id1'>
 		    <div class = "others">
 		    <img src="src/somebodyPhoto1.jpg">
 			     <div class = "myButtons">
-				<button id = "deleteButton"></button>
-				<button id = "editButton"></button>
+				<button class = "deleteButton" onclick = deleteMessage(this)></button>
+				<button class = "editButton" onclick = editMessage(this)></button>
 			    </div>
 			    <div class="name">
 				 <span class="author">smb1</span>
 			    </div>
-			    <div class="message-text">
+			    <div class="message-text" id = 'message-text'>
 				<p>Идет направо - песнь заводит, Налево - сказку говорит.</p>
 				<span class="msg-time">5:01 pm</span>
 				<span class="msg-time-edited">edited 5:08 pm</span>
 			    </div>
 		    </div>
 	        </div>
-	        <div class="message">
+	        <div class="message" id = 'mes_id2'>
 		    <div class = "removed">
 		    <img src="src/somebodyPhoto1.jpg">
 		            <div class="name">
 			        <span class="author">smb1</span>
 			    </div>
-			    <div class="message-text">
-				<p>Message was removed.</p>
+			    <div class="message-text" id = 'message-text'>
+				<p>Message was removed. </p>
 				<span class="msg-time">5:01 pm</span>
 			    </div>
 		    </div>
                 </div>
-	        <div class="message">
+	        <div class="message" id = 'mes_id3'>
 		    <div class = "others">
 		    <img src="src/somebodyPhoto1.jpg">
 			     <div class = "myButtons">
-				<button id = "deleteButton"></button>
-				<button id = "editButton"></button>
+				<bbutton class = "deleteButton" onclick = deleteMessage(this)></button>
+				<button class = "editButton" onclick = editMessage(this)></button>
 			    </div>
 			    <div class="name">
 			        <span class="author">smb1</span>
 			    </div>
-			    <div class="message-text">
+			    <div class="message-text" id = 'message-text'>
 				<p>Там чудеса: там леший бродит,Русалка на ветвях сидит;.</p>
 				<span class="msg-time">5:04 pm</span>
 			    </div>
 			   
 		    </div>
                 </div> 
-		<div class="message">
+		<div class="message" id = 'mes_id4'>
 		    <div class = "me">
 		     <img src="src/me.jpg">
 			    <div class = "myButtons">
-				<button id = "deleteButton"></button>
-				<button id = "editButton"></button>
+				<button class = "deleteButton" onclick = deleteMessage(this)></button>
+				<button class = "editButton" onclick = editMessage(this)></button>
 			    </div>
 			    <div class="name">
 				<span class="author">Me</span>
 			    </div>
-			    <div class="message-text">
+			    <div class="message-text" id = 'message-text'>
 				<p>Там на неведомых дорожках Следы невиданных зверей; Избушка там на курьих ножках Стоит без окон, без дверей;</p>
 				<span class="msg-time">5:00 pm</span>
 				<span class="msg-time-edited">edited 5:08 pm</span>
@@ -113,45 +114,45 @@
 			    
 		    </div>
                </div>
-	        <div class="message">
+	        <div class="message" id = 'mes_id5'>
 		    <div class = "others">
 		     <img src="src/somebodyPhoto1.jpg">
 			     <div class = "myButtons">
-				<button id = "deleteButton"></button>
-				<button id = "editButton"></button>
+				<button class = "deleteButton" onclick = deleteMessage(this)></button>
+				<button class = "editButton" onclick = editMessage(this)></button>
 			    </div>
 			    <div class="name">
 				 <span class="author">smb1</span>
 			    </div>
-			    <div class="message-text">
+			    <div class="message-text" id = 'message-text'>
 				<p>Там лес и дол видений полны;</p>
 				<span class="msg-time">5:01 pm</span>
 			    </div>
 		    </div>
 	        </div>
-	        <div class="message">
+	        <div class="message" id = 'mes_id6'>
 		    <div class = "removed">
 		     <img src="src/somebodyPhoto1.jpg">
 		            <div class="name">
 			        <span class="author">smb1</span>
 			    </div>
-			    <div class="message-text">
+			    <div class="message-text" id = 'message-text'>
 				<p>Message was removed.</p>
 				<span class="msg-time">5:01 pm</span>
 			    </div>
 		    </div>
                 </div>
-	        <div class="message">
+	        <div class="message" id = 'mes_id7'>
 		    <div class = "others">
 		     <img src="src/somebodyPhoto1.jpg">
 			     <div class = "myButtons">
-				<button id = "deleteButton"></button>
-				<button id = "editButton"></button>
+				<button class = "deleteButton" onclick = deleteMessage(this)></button>
+				<button class = "editButton" onclick = editMessage(this)></button>
 			    </div>
 			    <div class="name">
 			        <span class="author">smb1</span>
 			    </div>
-			    <div class="message-text">
+			    <div class="message-text" id = 'message-text'>
 				<p>Там о заре прихлынут волны На брег песчаный и пустой, И тридцать витязей прекрасных Чредой из вод выходят ясных, И с ними дядька их морской;.</p>
 				<span class="msg-time">5:04 pm</span>
 			    </div>
@@ -160,12 +161,12 @@
                 </div>               
 	    </div>
 	    <div class="input-area">
-		<textarea class="input-message" placeholder="Enter message..."></textarea>
-		<button id = "sendButton">Send</button>		
+		<textarea class="input-message" id="input-message" placeholder="Enter message..."></textarea>
+		<button id = "sendButton" onclick = send()>Send</button>		
 	    </div>
         </div>
     </main>
     </div>
-    
+	<script src = "script.js"></script>
 </body>
 </html>
