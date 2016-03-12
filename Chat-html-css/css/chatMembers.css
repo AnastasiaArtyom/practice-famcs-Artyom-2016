@@ -1,53 +1,61 @@
-.chatMembers{
-	float: left;
-	position: absolute;
-	height: 100%;
-	width: 18%;
-	background-color: #483D8B	;
-	border:1px solid #7B68EE;
+.chatMembers {
+    float: left;
+    position: absolute;
+    height: 100%;
+    width: 18%;
+    background-color: #465e8b;
+    border-bottom: 3px solid rgba(194, 214, 238, 0.24);
 }
-.chatMembers >.coversationList>ul{
-	list-style-type: none;	
-	padding: 20px;	
-	border-bottom: 2px solid #7B68EE;
-	color: red;
+
+.chatMembers > .coversationList > ul {
+    list-style-type: none;
+    padding: 20px;
+    border-bottom: 3px solid rgba(194, 214, 238, 0.24);
+    color: #ffa55d;
 }
-.message>div>img{
-	width: 40px;
-	height: 40px;	
-	border-radius: 225px;
-	border: 1px solid white;
+
+img {
+    width: 40px;
+    height: 40px;
+    border-radius: 225px;
+    border: 1px solid white;
 }
-.chatMembers>.coversationList> ul img{
-	width: 50px;
-	height: 50px;	
-	border-radius: 225px;
-	border: 1px solid white;
+
+.chatMembers > .coversationList > ul img {
+    width: 55px;
+    height: 55px;
+    border-radius: 225px;
+    border: 2px solid white;
 }
-.chatMembers>.coversationList>ul>li span{
-	color:white;
-	line-height:15px;
-	font-size: 15px;
-	position: relative;
+
+.chatMembers > .coversationList > ul > li span {
+    color: white;
+    line-height: 15px;
+    font-size: 20pt;
+    font-weight: 500;
+    position: relative;
 }
-.chatMembers>.coversationList>ul>li{
-		padding: 3%;
-	 border-bottom: 1px solid #7B68EE;
-	width: 100%;
+
+.chatMembers > .coversationList > ul > li {
+    padding: 3%;
+    border-bottom: 3px solid rgba(194, 214, 238, 0.24);
+    width: 100%;
 }
+
 .statusOnline:before {
-   content: '';
-   display: inline-block;
-   height: 16pt;
-	 width: 16pt;
-   background-image: url("../src/online.png");
-	 background-size: 100%;
+    content: '';
+    display: inline-block;
+    height: 16pt;
+    width: 16pt;
+    background-image: url("../src/online.png");
+    background-size: 100%;
 }
-.statusOffline:before{
-   content: '';
-   display: inline-block;
-   height: 16pt;
-	 width: 16pt;
-   background-image: url("../src/offline.png");
-	 background-size: 100%;
+
+.statusOffline:before {
+    content: '';
+    display: inline-block;
+    height: 16pt;
+    width: 16pt;
+    background-image: url("../src/offline.png");
+    background-size: 100%;
 }

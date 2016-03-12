@@ -1,32 +1,52 @@
-body{
-	background-color:#FFFAFA;
-	font-family: 'Open Sans', Arial, sans-serif;
-	font-size: 12px;
-	font-weight: bold;
-}
-#header{
-	position:inherit;
+body {
+    background-color: #edf9ff;
+    font-family: 'New Century Schoolbook', serif;
+    font-size: 16px;
+    font-weight: bold;
 }
 
-#chatLogoOffline{
-	display: none;
-}
-.chatLogo{
-	width: 12%;
-	padding: 2%;
-}
-#loginArea{
-	margin-top: 1%;
-	margin-right: 5%;
-	
+#header {
+    position: inherit;
 }
 
-
-#header{
-	background-color: #483D8B;
+#chatLogoOffline {
+    display: none;
 }
-#header>#loginArea{
-	float: right;
-	padding: 3%;
-	
+
+.chatLogo {
+/ / width: 12 %;
+/ / padding: 2 %;
+    width: 10%;
+    height: 10%;
+    border: none;
+    margin: 1%;
+
+}
+
+#loginArea {
+    margin-top: 1%;
+    margin-right: 5%;
+
+}
+
+#header {
+    background-color: #465e8b;
+/ / background-color: rgba(68, 87, 139, 0.64);
+}
+
+#loginButton {
+    border-radius: 7px;
+    border-bottom-style: groove;
+}
+
+#loginTextArea {
+    border-radius: 7px;
+    border-bottom-style: groove;
+
+}
+
+#loginArea {
+    float: right;
+    padding: 3%;
+
 }

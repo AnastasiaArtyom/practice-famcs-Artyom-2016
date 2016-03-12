@@ -1,38 +1,46 @@
-@media screen and (max-width: 440px) {
-	.chatMembers {
-    width: 0;
-  }
-  .chatMembers >.coversationList>ul{
-    width: 0;
-    display: none;
-  }
-  .statusOnline{
-    display: none;
-  }  
-  .statusOffline{
-    display: none;
-  }
-  .chat-area{
-    margin: 0;
-    left: 0;
-    width: 85%
-    
-  }
-  #header{
-    height: 100px;
-  }
-  #loginArea{
-    width: 60%;
-  }
- #loginButton{
-   float:right;
- }
-  #loginTextArea{
-    width: 100%;
-  }
+@media screen and (max-width: 510px) {
+    .chatMembers {
+        width: 0;
+    }
+
+    .chatMembers > .coversationList > ul {
+        width: 0;
+        display: none;
+    }
+
+    .statusOnline {
+        display: none;
+    }
+
+    .statusOffline {
+        display: none;
+    }
+
+    .chat-area {
+        margin: 0;
+        left: 0;
+        width: 85%
+
+    }
+
+    #header {
+        height: 100px;
+    }
+
+    #loginArea {
+        width: 60%;
+    }
+
+    #loginButton {
+        float: right;
+    }
+
+    #loginTextArea {
+        width: 100%;
+    }
 
 }
-.input-message{
- width: 65%;
-}
+
+.input-message {
+    width: 65%;
 }
