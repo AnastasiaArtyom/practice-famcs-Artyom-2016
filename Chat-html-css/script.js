@@ -70,7 +70,6 @@ function createMessage(messageText, classType, editable, deleted) {
     authorImage.src = 'src/me.jpg';
 
     if (deleted != 'true') {
-        alert('HHHHH');
         var buttonsDiv = document.createElement('div');
         buttonsDiv.className = 'myButtons';
 
@@ -112,16 +111,6 @@ function createMessage(messageText, classType, editable, deleted) {
     authorDiv.appendChild(messageTextDiv);
     newMessageDiv.appendChild(authorDiv);
     return newMessageDiv;
-}
-function genMyMessage(message) {
-    var prefix1 = '<div class="message"'
-    var prefix1a = '><div class="me"><img src="src/me.jpg"><div class = "myButtons"><button class = "deleteButton" onclick = deleteMessage(this)></button><button class = "editButton" onClick = editMessage(this)></button></div><div class="name"><span class="author">';
-    var prefix2 = '</span></div><div class="message-text"><p>';
-    var suffix1 = '</p><span class="msg-time">';
-    var suffix2 = '</span></div></div></div>';
-
-
-    return prefix1 + prefix1a + userName + prefix2 + message + suffix1 + getCurrentData() + suffix2;
 }
 
 function send(myEvent) {
