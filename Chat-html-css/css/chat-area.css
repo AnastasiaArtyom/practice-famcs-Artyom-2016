@@ -81,18 +81,14 @@
 }
 
 .msg-time {
-/ / position: absolute;
-/ / top: 45 %;
-/ / color: gray;
-/ / bottom: 30 %;
-    right: 15%;
     color: #802468;
     font-size: 12px;
+   
 }
 
 .author {
     font-size: 18pt;
-    padding: 1%;
+    margin-left: 1%;
 }
 
 .msg-time-edited {
@@ -121,8 +117,9 @@
     background-size: 100%;
 }
 
-.message > p {
+.msg{
     line-height: 20px;
+    word-wrap:break-word;   
 }
 
 .chat-area > .input-area {

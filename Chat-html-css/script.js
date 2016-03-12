@@ -5,7 +5,6 @@ function run() {
     var myEvent = document.getElementsByClassName('main')[0];
 
     myEvent.addEventListener('click', delegateEvent);
-    myEvent.addEventListener("focusout", delegateEvent);
     myEvent.addEventListener("keydown", delegateEvent);
 }
 
@@ -90,6 +89,7 @@ function createMessage(messageText, classType, editable, deleted) {
     messageTextDiv.className = 'message-text';
 
     var text = document.createElement('p');
+    text.className = 'msg';
     text.appendChild(document.createTextNode(messageText));
 
 
@@ -115,15 +115,16 @@ function createMessage(messageText, classType, editable, deleted) {
 
 function send(myEvent) {
     if (userName != "") {
-        var message = document.getElementById('input-message').value;
+        var messageText = document.getElementById('input-message').value;
 
         document.getElementById('input-message').value = "";
         var chatList = document.getElementById('chat-list');
-        if (message == "" || message == null)
+        if (messageText == "" || messageText == null)
             return;
         var newDiv = document.createElement('div');
-        chatList.appendChild(createMessage(message, 'me', '', 'false'));
+        chatList.appendChild(createMessage(messageText + '\n', 'me', '', 'false'));
         chatList.scrollTop = chatList.scrollHeight;
+        messageText = '';
     } else {
         alert("You must login!!");
         document.getElementById('input-message').value = "";
@@ -134,7 +135,7 @@ function deleteMessage(myEvent) {
     var message = myEvent.target.parentNode.parentNode.parentNode;
     if (message.getElementsByClassName("me").length > 0 && userName != "") {
         var messageText = 'Mesaage was removed!';
-        var div = createMessage(messageText, 'meRemoved', '', 'true');
+        var div = createMessage(messageText, 'meRemoved\n', '', 'true');
         var newMessage = div.childNodes[0];
         message.parentNode.replaceChild(newMessage, message);
     }
@@ -152,7 +153,7 @@ function editMessage(myEvent) {
             alert("try again!");
             return;
         }
-        var div = createMessage(messageText, 'me', 'edited ', '');
+        var div = createMessage(messageText + '\n', 'me', 'edited ', '');
         var newMessage = div.childNodes[0];
         message.parentNode.replaceChild(newMessage, message);
     }
@@ -160,3 +161,4 @@ function editMessage(myEvent) {
         alert("FORBIDDEN!!");
     }
 }
+

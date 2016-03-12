@@ -12,6 +12,11 @@
     padding: 20px;
     border-bottom: 3px solid rgba(194, 214, 238, 0.24);
     color: #ffa55d;
+    
+}
+.coversationList{
+    max-height: 80%;
+    overflow-y:auto;
 }
 
 img {
