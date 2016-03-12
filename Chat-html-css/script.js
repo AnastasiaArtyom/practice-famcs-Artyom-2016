@@ -10,7 +10,7 @@ function run() {
 
 function delegateEvent(myEvent) {
     if (myEvent.type === 'click') {
-        if (myEvent.target.id.contains('loginButton')) {
+        if (myEvent.target.id == 'loginButton') {
             login(myEvent);
         }
 
@@ -20,14 +20,14 @@ function delegateEvent(myEvent) {
         if (myEvent.target.classList.contains('editButton')) {
             editMessage(myEvent);
         }
-        if (myEvent.target.id.contains('sendButton')) {
+        if (myEvent.target.id == 'sendButton') {
             send(myEvent);
         }
     } else if (myEvent.type == 'keydown') {
-        if (myEvent.keyCode === 13 && myEvent.target.id.contains('loginTextArea')) {
+        if (myEvent.keyCode === 13 && myEvent.target.id == 'loginTextArea') {
             login(myEvent);
         }
-        if (myEvent.shiftKey && myEvent.keyCode == 13 && myEvent.target.id.contains('input-message')) {
+        if (myEvent.shiftKey && myEvent.keyCode == 13 && myEvent.target.id == 'input-message') {
             send();
 
         }
@@ -149,11 +149,11 @@ function editMessage(myEvent) {
 
     if (message.getElementsByClassName("me").length > 0 && userName != "") {
         messageText = prompt('Input new message', 'Enter the message');
-        if (messageText == null) {
+        if (messageText == null || messageText == '') {
             alert("try again!");
             return;
         }
-        var div = createMessage(messageText + '\n', 'me', 'edited ', '');
+        var div = createMessage(messageText , 'me', 'edited ', '');
         var newMessage = div.childNodes[0];
         message.parentNode.replaceChild(newMessage, message);
     }
