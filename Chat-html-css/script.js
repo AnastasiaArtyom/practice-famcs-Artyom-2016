@@ -154,11 +154,12 @@ function editMessage(myEvent) {
             return;
         }
         var div = createMessage(messageText , 'me', 'edited ', '');
-        var newMessage = div.childNodes[0];
-        message.parentNode.replaceChild(newMessage, message);
+        //var newMessage = div.childNodes[0];
+        message.parentNode.replaceChild(div, message);
     }
     else {
         alert("FORBIDDEN!!");
     }
+
 }
 
