@@ -38,6 +38,11 @@
     #loginTextArea {
         width: 100%;
     }
+    
+    .chatLogo{
+       width:  55px;
+        height: 55px;
+    }
 
 }
 
