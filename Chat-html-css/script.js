@@ -214,6 +214,7 @@ function redrawMessages(){
     for(var index = 0; index < msg.length; ++index){
         if(msg[index].childNodes[0].childNodes[2].innerHTML == userName){
             if(msg[index].childNodes[0].className == 'meRemoved' ||  msg[index].childNodes[0].className == 'removed') {
+                //msg[index].childNodes[0].className = 'me';
                 msg[index].childNodes[0].className = 'meRemoved';
             }
             else {
@@ -222,6 +223,7 @@ function redrawMessages(){
         }
         else{
             if(msg[index].childNodes[0].className == 'removed' ||  msg[index].childNodes[0].className == 'meRemoved') {
+                //msg[index].childNodes[0].className = 'others';
                 msg[index].childNodes[0].className = 'removed';
             }
             else {
@@ -238,7 +240,7 @@ function login() {
     window.alert('Hello ' + userName);
     userPhoto = findUserPhoto(userName);
     saveUserName();
-   // redrawMessages();
+    redrawMessages();
     //render();
 }
 

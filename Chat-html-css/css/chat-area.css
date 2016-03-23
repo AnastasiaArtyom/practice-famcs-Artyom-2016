@@ -65,7 +65,8 @@
 .meRemoved {
     background-color: rgba(232, 185, 41, 0.41);
     border-radius: 15px;
-    float: right;
+    float:right;
+    //margin-right: 5%;
     margin: 1%;
     padding: 2%;
     font-style: italic;
