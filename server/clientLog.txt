@@ -1,0 +1,8 @@
+3:28:2016 20:50:23 start sending message "ghbdttttn"
+3:28:2016 20:50:23 message sent
+3:28:2016 20:50:23 stop sending message "ghbdttttn"
+3:28:2016 20:50:23 Message from server: ghbdttttn
+3:28:2016 20:50:26 start sending message "rfr ;bmrn&&"
+3:28:2016 20:50:26 message sent
+3:28:2016 20:50:26 stop sending message "rfr ;bmrn&&"
+3:28:2016 20:50:27 Message from server: rfr ;bmrn&&
