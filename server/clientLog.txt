@@ -1,8 +1,61 @@
-3:28:2016 20:50:23 start sending message "ghbdttttn"
-3:28:2016 20:50:23 message sent
-3:28:2016 20:50:23 stop sending message "ghbdttttn"
-3:28:2016 20:50:23 Message from server: ghbdttttn
-3:28:2016 20:50:26 start sending message "rfr ;bmrn&&"
-3:28:2016 20:50:26 message sent
-3:28:2016 20:50:26 stop sending message "rfr ;bmrn&&"
-3:28:2016 20:50:27 Message from server: rfr ;bmrn&&
+3:29:2016 08:58:57 start sending message "привет"
+3:29:2016 08:58:57 message sent
+3:29:2016 08:58:57 stop sending message "привет"
+3:29:2016 08:58:57 Message from server: привет
+3:29:2016 08:58:58 start sending message "ъ"
+3:29:2016 08:58:58 message sent
+3:29:2016 08:58:58 stop sending message "ъ"
+3:29:2016 08:58:58 Message from server: ъ
+3:29:2016 08:59:00 start sending message "ываопгшр"
+3:29:2016 08:59:00 message sent
+3:29:2016 08:59:00 stop sending message "ываопгшр"
+3:29:2016 08:59:00 Message from server: ываопгшр
+3:29:2016 08:59:05 start sending message "blablabla"
+3:29:2016 08:59:05 message sent
+3:29:2016 08:59:05 stop sending message "blablabla"
+3:29:2016 08:59:06 Message from server: blablabla
+3:29:2016 12:23:24 Connection error. Disconnecting...
+3:29:2016 12:23:24 В соединении отказано
+3:29:2016 12:23:30 Connection error. Disconnecting...
+3:29:2016 12:23:30 В соединении отказано
+3:29:2016 12:26:56 Connection error. Disconnecting...
+3:29:2016 12:26:56 В соединении отказано
+3:29:2016 12:28:45 Message from server: Hi
+3:29:2016 12:28:45 Message from server: How are you
+3:29:2016 12:28:45 Message from server: blablabla
+3:29:2016 12:28:46 Message from server: Hi
+3:29:2016 12:28:46 Message from server: How are you
+3:29:2016 12:28:46 Message from server: blablabla
+3:29:2016 12:28:47 Message from server: Hi
+3:29:2016 12:28:47 Message from server: How are you
+3:29:2016 12:28:47 Message from server: blablabla
+3:29:2016 12:28:48 Message from server: Hi
+3:29:2016 12:28:48 Message from server: How are you
+3:29:2016 12:28:48 Message from server: blablabla
+3:29:2016 12:28:49 Message from server: Hi
+3:29:2016 12:28:49 Message from server: How are you
+3:29:2016 12:28:49 Message from server: blablabla
+3:29:2016 12:28:50 Message from server: Hi
+3:29:2016 12:28:50 Message from server: How are you
+3:29:2016 12:28:50 Message from server: blablabla
+3:29:2016 12:28:51 Message from server: Hi
+3:29:2016 12:28:51 Message from server: How are you
+3:29:2016 12:28:51 Message from server: blablabla
+3:29:2016 12:28:52 Message from server: Hi
+3:29:2016 12:28:52 Message from server: How are you
+3:29:2016 12:28:52 Message from server: blablabla
+3:29:2016 12:28:54 Message from server: Hi
+3:29:2016 12:28:54 Message from server: How are you
+3:29:2016 12:28:54 Message from server: blablabla
+3:29:2016 12:28:55 Message from server: Hi
+3:29:2016 12:28:55 Message from server: How are you
+3:29:2016 12:28:55 Message from server: blablabla
+3:29:2016 12:28:56 Message from server: Hi
+3:29:2016 12:28:56 Message from server: How are you
+3:29:2016 12:28:56 Message from server: blablabla
+3:29:2016 12:28:57 Message from server: Hi
+3:29:2016 12:28:57 Message from server: How are you
+3:29:2016 12:28:57 Message from server: blablabla
+3:29:2016 12:28:58 Message from server: Hi
+3:29:2016 12:28:58 Message from server: How are you
+3:29:2016 12:28:58 Message from server: blablabla

@@ -1,2 +1,4 @@
-3:28:2016 20:50:23 Received new message from user: ghbdttttn
-3:28:2016 20:50:26 Received new message from user: rfr ;bmrn&&
+3:29:2016 08:58:57 Received new message from user: привет
+3:29:2016 08:58:58 Received new message from user: ъ
+3:29:2016 08:59:00 Received new message from user: ываопгшр
+3:29:2016 08:59:05 Received new message from user: blablabla

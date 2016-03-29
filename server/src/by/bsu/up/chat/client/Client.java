@@ -21,7 +21,7 @@ public class Client {
 
     private static final Logger logger = Log.create(Client.class);
 
-    public static final Logger clientLogger = new LogToFile("clientLog.txt");
+    private  LogToFile clientLogger;
 
     private List<String> localHistory = new ArrayList<String>();
 
@@ -36,6 +36,9 @@ public class Client {
     public Client(String host, Integer port) {
         this.host = host;
         this.port = port;
+        try {
+            clientLogger = new LogToFile("clientLog.txt");
+        }catch(IOException e){System.err.println("We can not create log file");}
     }
 
     public void connect() {
@@ -75,7 +78,9 @@ public class Client {
 
         // Thread#stop method is deprecated. The listeners threads stops when
         // finish it's runnable action.
+        clientLogger.closeFile();
         connected = false;
+
     }
 
     private void startListening() {
@@ -136,7 +141,7 @@ public class Client {
         List<String> list = new ArrayList<>();
         HttpURLConnection incomeConnection = null;
         try {
-            String query = String.format("%s?%s=%s", Constants.CONTEXT_PATH, Constants.REQUEST_PARAM_TOKEN, MessageHelper.buildToken(localHistory.size()));
+            String query = String.format("%s?%s=%s", Constants.CONTEXT_PATH, Constants.REQUEST_PARAM_TOKEN, "TN11EN");
             URL url = new URL(Constants.PROTOCOL, host, port, query);
             incomeConnection = prepareInputConnection(url);
             String response = MessageHelper.inputStreamToString(incomeConnection.getInputStream());

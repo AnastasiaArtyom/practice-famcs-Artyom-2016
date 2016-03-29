@@ -27,7 +27,17 @@ public class ServerHandler implements HttpHandler {
 
     private List<String> messageStorage = new ArrayList<>();
 
-    private static final Logger serverLogger = new LogToFile("serverlog.txt");
+    private LogToFile serverLogger;
+
+
+    public ServerHandler(){
+        try {
+            serverLogger = new LogToFile("serverlog.txt");
+        }catch(IOException e){
+            System.err.println("We can not create log file");
+        }
+
+    }
 
     @Override
     public void handle(HttpExchange httpExchange) throws IOException {
@@ -44,6 +54,9 @@ public class ServerHandler implements HttpHandler {
             serverLogger.error("An error occurred when dispatching request.", e);
             response = new Response(Constants.RESPONSE_CODE_INTERNAL_SERVER_ERROR, "Error while dispatching message");
         }
+        finally {
+            serverLogger.closeFile();
+        }
         sendResponse(httpExchange, response);
 
     }
@@ -57,6 +70,8 @@ public class ServerHandler implements HttpHandler {
             return new Response(Constants.RESPONSE_CODE_METHOD_NOT_ALLOWED,
                     String.format("Unsupported http method %s", httpExchange.getRequestMethod()));
         }
+
+
     }
 
     private Response doGet(HttpExchange httpExchange) {
