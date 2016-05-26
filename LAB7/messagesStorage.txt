@@ -1,0 +1,8 @@
+[{"id":"f7939b9c-c528-4f7f-a6e6-af98d579cace","author":"me","text":"Hi","isDeleted":false,"isEdited":false,"method":"POST"},
+{"id":"10836559-2d09-44e4-89c2-b8d6aa166bfe","author":"Vasia","text":"Hi","isDeleted":false,"isEdited":false,"method":"POST"},
+{"id":"f7939b9c-c528-4f7f-a6e6-af98d579cace","text":"kjgjg","isDeleted":false,"isEdited":true,"method":"PUT"},
+{"id":"0900bcda-36e7-4c90-aa1a-b10cfbb6c49c","author":"Vasia","text":"flxnhlfn","isDeleted":false,"isEdited":false,"method":"POST"},
+{"id":"f7939b9c-c528-4f7f-a6e6-af98d579cace","text":"Hello","isDeleted":false,"isEdited":true,"method":"PUT"},
+{"id":"10836559-2d09-44e4-89c2-b8d6aa166bfe","isDeleted":false,"isEdited":false,"method":"DELETE"},
+{"id":"fe49e130-9bad-4582-9f63-9e50b790a2b1","author":"me","text":"ggg\n","isDeleted":false,"isEdited":false,"method":"POST"},
+{"id":"5d145415-c5a3-4963-8467-440a6156687e","author":"Vasia","text":"zknflkdf","isDeleted":false,"isEdited":false,"method":"POST"}]

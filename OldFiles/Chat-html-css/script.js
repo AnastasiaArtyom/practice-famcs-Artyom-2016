@@ -12,33 +12,32 @@ var chatList = [
 var userPhoto;
 
 function run() {
-    document.getElementById('loginTextArea').value = userName;
+    //localStorage.clear();
     userPhoto = findUserPhoto(userName);
     userName = loadUserName() || '';
     var myEvent = document.getElementsByClassName('main')[0];
+
     myEvent.addEventListener('click', delegateEvent);
     myEvent.addEventListener("keydown", delegateEvent);
     messages = loadMessages() || [];
+
+    document.getElementById('loginTextArea').value = userName;
     Connect();
 }
+
 
 function Connect() {
     saveUserName();
     if (isConnected) {
         return;
     }
-    ajax('GET', URL + '?token=' + token, null, function (responseText) {
-        document.getElementsByClassName('chatLogo')[1].style.display = 'none';
-        document.getElementsByClassName('chatLogo')[0].style.display = 'initial';
+    ajax('URL', mainUrl + '?token=' + token, null, function (responseText) {
         if (isConnected) {
             var new_msg = JSON.parse(responseText).messages;
             token = JSON.parse(responseText).token;
-            if (new_msg.length > 0)
-                updatePage(new_msg);
+            updatePage(new_msg);
         }
     });
-    var i = 0;
-
     function whileConnected() {
         isConnected = setTimeout(function () {
             ajax('GET', URL + '?token=' + token, null, function (responseText) {
@@ -47,7 +46,6 @@ function Connect() {
                     token = JSON.parse(responseText).token;
                     updatePage(new_msg);
                     whileConnected();
-
                 }
             });
         }, seconds(1));
@@ -56,58 +54,44 @@ function Connect() {
     whileConnected();
 }
 
-function seconds(value) {
-    return Math.round(value * 1000);
-}
-
 
 function Message(userName, msg_text, id) {
     this.method;
     this.author = userName;
     this.text = msg_text;
-    this.time = getCurrentData();
     this.id = id;
     this.isDeleted = false;
     this.isEdited = false;
 }
 
 function updatePage(newMessagesArray) {
-    var chatList = document.getElementById('chat-list');
-    document.getElementsByClassName('chatLogo')[1].style.display = 'none';
-    document.getElementsByClassName('chatLogo')[0].style.display = 'initial';
-    for (var i = 0; i < newMessagesArray.length; ++i) {;
-        if (newMessagesArray[i].method === 'POST') {
-            chatList.appendChild(renderMessage(newMessagesArray[i]));
-            messages.push(newMessagesArray[i]);
-
-        } else if (newMessagesArray[i].method === 'PUT') {
-            for (var j = 0; j < messages.length; ++j) {
-
-                if (messages[j].id === newMessagesArray[i].id) {
-
-                    messages[j].text = newMessagesArray[i].text;
-
-                    messages[j].isEdited = true;
-                    var message = document.getElementById(messages[j].id);
-                    message.childNodes[0].childNodes[3].childNodes[0].innerHTML = messages[j].text;
-                    break;
-                }
-            }
-        } else {
-            for (var j = 0; j < messages.length; ++j) {
-
-                if (messages[j].id === newMessagesArray[i].id) {
-                    messages[j].text = 'Message was removed';
-                    messages[j].isDeleted = true;
-                    var message = document.getElementById(messages[j].id);
-                    message.childNodes[0].childNodes[3].childNodes[0].innerHTML = messages[j].text;
-                    message.childNodes[0].className = 'meRemoved';
-                    break;
+    for (var index = 0; index < newMessagesArray.length; ++index) {
+        if (newMessagesArray[index].method === 'POST') {
+            messages.push(newMes[i]);
+        }
+        else if (newMessagesArray[index].method === 'PUT') {
+            for (var i = 0; i < messages.length; ++i) {
+                if (messages[i].id === newMessagesArray[index].id) {
+                    messages[i].method = 'PUT';
+                    messages[i].text = newMessagesArray[i].text;
+                    messages[index].time = newMessagesArray[index].time;
+                    messages[index].author = newMessagesArray[index].author;
+        	    messages[index].isDeleted = newMessagesArray[index].isDeleted;
+       		    messages[index].isEdited = newMessagesArray[index].isEdited;
                 }
             }
         }
-    }
+        else {
+            for (var j = 0; j < messages.length; ++j) {
+                if (messages[j].id === newMessagesArray[index].id) {
+                    messages[j].method = 'DELETE';
+                    messages[j].text = '';
+                }
 
+            }
+        }
+
+    }
 }
 
 
@@ -117,8 +101,8 @@ function loadMessages() {
         return;
     }
 
-    return JSON.parse(localStorage.getItem('allMessages'));
-    ;
+   return JSON.parse(localStorage.getItem('allMessages'));
+;
 }
 
 function generateUUID() {
@@ -147,17 +131,23 @@ function findUserPhoto(userName) {
     }
     return chatList[chatList.length - 1].photo;
 }
+
 function renderMessage(message) {
+
     var newMessageDiv = document.createElement('div');
     newMessageDiv.className = 'message';
     newMessageDiv.id = message.id;
+
     var authorDiv = document.createElement('div');
-    if (message.author === userName) {
-        if (message.isDeleted === true) {
+
+
+    if (message.author == userName) {
+        if (message.isDeleted == true) {
             authorDiv.className = 'meRemoved';
         } else {
             authorDiv.className = 'me';
         }
+
     } else {
         if (message.isDeleted == true) {
             authorDiv.className = 'removed';
@@ -190,15 +180,27 @@ function renderMessage(message) {
 
     var text = document.createElement('p');
     text.className = 'msg';
-    text.appendChild(document.createTextNode(message.text));
-    if (message.isDeleted != true) {
+    text.appendChild(document.createTextNode(message.messageText));
+
+
+    var time = document.createElement('span');
+    time.className = 'msg-time';
+    var currentTime = getCurrentData();
+    var editable = '';
+    if(message.isEdited == true){
+        editable = 'edited ';
+    }
+    time.appendChild(document.createTextNode(editable + message.time));
+
+    if(message.isDeleted != true) {
         buttonsDiv.appendChild(deleteButton);
         buttonsDiv.appendChild(editButton);
     }
 
     messageTextDiv.appendChild(text);
+    messageTextDiv.appendChild(time);
     authorDiv.appendChild(authorImage);
-    if (message.isDeleted != true) {
+    if(message.isDeleted != true) {
         authorDiv.appendChild(buttonsDiv);
     }
 
@@ -280,23 +282,21 @@ function delegateEvent(myEvent) {
     }
 }
 
-function redraw(message) {
-    var msg = document.getElementsByClassName('message');
-}
-
-function redrawMessages() {
-    var msg = document.getElementsByClassName('message');
-    for (var index = 0; index < msg.length; ++index) {
-        if (msg[index].childNodes[0].childNodes[2].innerHTML == userName) {
-            if (msg[index].childNodes[0].className == 'meRemoved' || msg[index].childNodes[0].className == 'removed') {
+function redrawMessages(){
+ var msg = document.getElementsByClassName('message');
+    for(var index = 0; index < msg.length; ++index){
+        if(msg[index].childNodes[0].childNodes[2].innerHTML == userName){
+            if(msg[index].childNodes[0].className == 'meRemoved' ||  msg[index].childNodes[0].className == 'removed') {
+                //msg[index].childNodes[0].className = 'me';
                 msg[index].childNodes[0].className = 'meRemoved';
             }
             else {
                 msg[index].childNodes[0].className = 'me';
             }
         }
-        else {
-            if (msg[index].childNodes[0].className == 'removed' || msg[index].childNodes[0].className == 'meRemoved') {
+        else{
+            if(msg[index].childNodes[0].className == 'removed' ||  msg[index].childNodes[0].className == 'meRemoved') {
+                //msg[index].childNodes[0].className = 'others';
                 msg[index].childNodes[0].className = 'removed';
             }
             else {
@@ -314,8 +314,23 @@ function login() {
     userPhoto = findUserPhoto(userName);
     saveUserName();
     redrawMessages();
+    //render();
 }
 
+function getCurrentData() {
+    var date = new Date();
+
+    var options = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        timezone: 'UTC',
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric'
+    };
+    return date.toLocaleString("en-US", options);
+}
 function createMessage(messageText, id) {
     var newMessageDiv = document.createElement('div');
     newMessageDiv.className = 'message';
@@ -370,18 +385,20 @@ function createMessage(messageText, id) {
     authorDiv.appendChild(messageTextDiv);
     newMessageDiv.appendChild(authorDiv);
 
-    var message = createJSONMessage(id, userName, messageText, false, false);
+    var message = createJSONMessage(id, userName, currentTime, messageText, false, false);
 
     messages.push(message);
+
 
 
     return newMessageDiv;
 }
 
-function createJSONMessage(id, userName, messageText, isDeleted, isEdited) {
+function createJSONMessage(id, userName, time, messageText, isDeleted, isEdited) {
     return {
         'id': id,
         'author': userName,
+        'time': time,
         'messageText': messageText,
         'isDeleted': isDeleted,
         'isEdited': isEdited
@@ -391,16 +408,19 @@ function createJSONMessage(id, userName, messageText, isDeleted, isEdited) {
 function send(myEvent) {
     if (userName != "") {
         var messageText = document.getElementById('input-message').value;
-
+        
         var chatList = document.getElementById('chat-list');
         if (messageText == "" || messageText == null)
             return;
         var id = generateUUID();
         var newDiv = document.createElement('div');
         var message = new Message(userName, messageText, id);
-        ajax('POST', URL, JSON.stringify(message), function () {
+	 ajax('POST', URL, JSON.stringify(message), function () {
             document.getElementById('input-message').value = "";
         });
+        chatList.appendChild(createMessage(messageText + '\n', id));
+        chatList.scrollTop = chatList.scrollHeight;
+        saveMessages();
     } else {
         alert("You must login!!");
         document.getElementById('input-message').value = "";
@@ -412,15 +432,15 @@ function deleteMessage(myEvent) {
     if (message.getElementsByClassName("me").length > 0 && userName != "") {
         var messageText = 'Mesaage was removed!';
         var id = message.id;
-
+        
         changeJSON(id, messageText, true, false);
-        ajax('DELETE', URL, '{"id":"' + id + '"}', function () {
-            message.childNodes[0].className = 'meRemoved';
+	ajax('DELETE', URL, '{"id":"' + id + '"}', function () {
+	    message.childNodes[0].className = 'meRemoved';
             message.childNodes[0].childNodes[3].childNodes[0].innerHTML = messageText;
             message.childNodes[0].childNodes[3].childNodes[1].innerHTML = getCurrentData();
             message.childNodes[0].childNodes[1].style.display = 'none';
-
-        })
+        
+    })
         saveMessages();
     }
     else {
@@ -439,8 +459,11 @@ function editMessage(myEvent) {
         }
         var id = message.id;
         ajax('PUT', URL, '{"id":"' + id + '", "text":"' + messageText + '"}', function () {
-            changeJSON(id, messageText, false, true);
-        });
+        message.childNodes[0].childNodes[3].childNodes[0].innerHTML = messageText;
+        message.childNodes[0].childNodes[3].childNodes[1].innerHTML = 'edited ' + getCurrentData();
+        changeJSON(id, messageText, false, true);
+    });
+        //saveMessages();
     }
     else {
         alert("FORBIDDEN!!");
@@ -465,26 +488,16 @@ function ajax(method, url, data, continueWith) {
     xhr.open(method || 'GET', url, true);
     xhr.onload = function () {
         if (xhr.readyState !== 4) {
-            document.getElementsByClassName('chatLogo')[0].style.display = 'none';
-            document.getElementsByClassName('chatLogo')[1].style.display = 'initial';
             return;
         }
 
         if (xhr.status != 200) {
-            document.getElementsByClassName('chatLogo')[0].style.display = 'none';
-            document.getElementsByClassName('chatLogo')[1].style.display = 'initial';
             return;
         }
         continueWith(xhr.responseText);
     };
     xhr.onerror = function () {
-        document.getElementsByClassName('chatLogo')[0].style.display = 'none';
-        document.getElementsByClassName('chatLogo')[1].style.display = 'initial';
+        //document.getElementsByClassName('error')[0].style.display = 'block';
     };
-    xhr.ontimeout = function () {
-        document.getElementsByClassName('chatLogo')[0].style.display = 'none';
-        document.getElementsByClassName('chatLogo')[1].style.display = 'initial';
-    };
-
     xhr.send(data);
 }
