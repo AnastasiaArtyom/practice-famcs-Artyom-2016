@@ -72,16 +72,16 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `chat`;
-INSERT INTO `chat`.`Messages` (`text`, `date`, `user_id`) VALUES ( 'Hi', '2015-02-27', 1);
-INSERT INTO `chat`.`Messages` (`text`, `date`, `user_id`) VALUES ( 'Hello', '2015-02-27', 2);
-INSERT INTO `chat`.`Messages` (`text`, `date`, `user_id`) VALUES ('How are you?', '2015-02-28', 2);
-INSERT INTO `chat`.`Messages` (`text`, `date`, `user_id`) VALUES ( 'I\'m fine', '2015-02-28', 1);
-INSERT INTO `chat`.`Messages` (`text`, `date`, `user_id`) VALUES ( 'Bla-la-la', '2015-02-28', 3);
-INSERT INTO `chat`.`Messages` (`text`, `date`, `user_id`) VALUES ( 'It is time to cry', '2015-05-09', 1);
-INSERT INTO `chat`.`Messages` (`text`, `date`, `user_id`) VALUES ( 'Hey guys', '2015-05-09', 2);
-INSERT INTO `chat`.`Messages` (`text`, `date`, `user_id`) VALUES ( 'Wazzup', '2015-05-09', 1);
-INSERT INTO `chat`.`Messages` (`text`, `date`, `user_id`) VALUES ('I wanna do it again', '2015-05-09', 3);
-INSERT INTO `chat`.`Messages` (`text`, `date`, `user_id`) VALUES ('First night staying up all night', '2015-05-10', 2);
+INSERT INTO `chat`.`Messages` (`text`, `date`, `user_id`) VALUES ( 'Hi', '2016-02-27', 1);
+INSERT INTO `chat`.`Messages` (`text`, `date`, `user_id`) VALUES ( 'Hello', '2016-02-27', 2);
+INSERT INTO `chat`.`Messages` (`text`, `date`, `user_id`) VALUES ('How are you?', '2016-02-28', 2);
+INSERT INTO `chat`.`Messages` (`text`, `date`, `user_id`) VALUES ( 'I\'m fine', '2016-02-28', 1);
+INSERT INTO `chat`.`Messages` (`text`, `date`, `user_id`) VALUES ( 'Bla-la-la', '2016-02-28', 3);
+INSERT INTO `chat`.`Messages` (`text`, `date`, `user_id`) VALUES ( 'It is time to cry', '2016-05-09', 1);
+INSERT INTO `chat`.`Messages` (`text`, `date`, `user_id`) VALUES ( 'Hey guys', '2016-05-09', 2);
+INSERT INTO `chat`.`Messages` (`text`, `date`, `user_id`) VALUES ( 'Wazzup', '2016-05-09', 1);
+INSERT INTO `chat`.`Messages` (`text`, `date`, `user_id`) VALUES ('I wanna do it again', '2016-05-09', 3);
+INSERT INTO `chat`.`Messages` (`text`, `date`, `user_id`) VALUES ('First night staying up all night', '2016-05-10', 2);
 
 COMMIT;
 
