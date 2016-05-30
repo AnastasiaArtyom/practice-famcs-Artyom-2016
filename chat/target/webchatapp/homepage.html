@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="src/chatLogo.png" type="image/png">
+    <title>Chat</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/normalize.css"/>
+
+    <link rel="stylesheet" href="css/chat-area.css"/>
+    <link rel="stylesheet" href="css/chatMembers.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/adaptive.css"/>
+
+</head>
+<body onload='run()'>
+<main class="main">
+    <div id='header'>
+        <img class='chatLogo' id='chatLogoOnline' src='src/chatLogo.png'/>
+        <img class='chatLogo' id='chatLogoOffline' src='src/chatLogoOffline.png'/>
+        <div id='loginArea'>
+            <input id="loginTextArea" type="text" class="main-input" placeholder="Input name"/>
+            <button id="loginButton">Log in</button>
+        </div>
+    </div>
+
+    <div>
+        <div class='chatMembers'>
+            <div class="coversationList">
+                <ul>
+                    <li>
+                        <div class="statusOnline"></div>
+                        <img src="src/somebodyPhoto1.jpg"><a href="#"><span>smb1</span></a></li>
+                    <li>
+                        <div class="statusOnline"></div>
+                        <img src="src/somebodyPhoto2.jpg"><a href="#"><span>smb2</span></a></li>
+                    <li>
+                        <div class="statusOffline"></div>
+                        <img src="src/me.jpg"><a href="#"><span>Me</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="chat-area">
+            <div class="chat-list" id="chat-list">
+
+            </div>
+            <div class="input-area">
+                <textarea class="input-message" id="input-message" placeholder="Enter message..."></textarea>
+                <button id="sendButton">Send</button>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

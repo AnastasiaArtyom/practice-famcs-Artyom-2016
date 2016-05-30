@@ -53,7 +53,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `chat`;
-INSERT INTO `chat`.`Users` (`name`) VALUE ('Vasia');
+INSERT INTO `chat`.`Users` (`name`) VALUES ('Vasia');
 INSERT INTO `chat`.`Users` (`name`) VALUES ('Lena');
 INSERT INTO `chat`.`Users` (`name`) VALUES ('Kate');
 INSERT INTO `chat`.`Users` (`name`) VALUES ('Alex');
