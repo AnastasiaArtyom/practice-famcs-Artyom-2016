@@ -2,7 +2,7 @@ var userName = "";
 var messages = [];
 var isConnected = void 0;
 var token = 'TN11EN';
-var URL = 'http://127.0.0.1:12345/chat';
+var URL = 'http://localhost:8080/chat';
 var chatList = [
     newChatMember('me', 'src/me.jpg'),
     newChatMember('smb2', 'src/somebodyPhoto2.jpg'),
@@ -65,7 +65,6 @@ function Message(userName, msg_text, id) {
     this.method;
     this.author = userName;
     this.text = msg_text;
-    this.time = getCurrentData();
     this.id = id;
     this.isDeleted = false;
     this.isEdited = false;
@@ -351,17 +350,17 @@ function createMessage(messageText, id) {
     text.appendChild(document.createTextNode(messageText));
 
 
-    var time = document.createElement('span');
+    /*var time = document.createElement('span');
     time.className = 'msg-time';
     var currentTime = getCurrentData();
-    time.appendChild(document.createTextNode(currentTime));
+    time.appendChild(document.createTextNode(currentTime));*/
 
 
     buttonsDiv.appendChild(deleteButton);
     buttonsDiv.appendChild(editButton);
 
     messageTextDiv.appendChild(text);
-    messageTextDiv.appendChild(time);
+   // messageTextDiv.appendChild(time);
     authorDiv.appendChild(authorImage);
 
     authorDiv.appendChild(buttonsDiv);
@@ -417,7 +416,7 @@ function deleteMessage(myEvent) {
         ajax('DELETE', URL, '{"id":"' + id + '"}', function () {
             message.childNodes[0].className = 'meRemoved';
             message.childNodes[0].childNodes[3].childNodes[0].innerHTML = messageText;
-            message.childNodes[0].childNodes[3].childNodes[1].innerHTML = getCurrentData();
+            //message.childNodes[0].childNodes[3].childNodes[1].innerHTML = getCurrentData();
             message.childNodes[0].childNodes[1].style.display = 'none';
 
         })
@@ -467,12 +466,14 @@ function ajax(method, url, data, continueWith) {
         if (xhr.readyState !== 4) {
             document.getElementsByClassName('chatLogo')[0].style.display = 'none';
             document.getElementsByClassName('chatLogo')[1].style.display = 'initial';
+            alert("Bad ready state");
             return;
         }
 
         if (xhr.status != 200) {
             document.getElementsByClassName('chatLogo')[0].style.display = 'none';
             document.getElementsByClassName('chatLogo')[1].style.display = 'initial';
+            alert("Bad code");
             return;
         }
         continueWith(xhr.responseText);
@@ -480,10 +481,12 @@ function ajax(method, url, data, continueWith) {
     xhr.onerror = function () {
         document.getElementsByClassName('chatLogo')[0].style.display = 'none';
         document.getElementsByClassName('chatLogo')[1].style.display = 'initial';
+        alert("Error");
     };
     xhr.ontimeout = function () {
         document.getElementsByClassName('chatLogo')[0].style.display = 'none';
         document.getElementsByClassName('chatLogo')[1].style.display = 'initial';
+        alert("Timeout")
     };
 
     xhr.send(data);

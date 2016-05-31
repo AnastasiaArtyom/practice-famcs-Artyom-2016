@@ -35,7 +35,7 @@ public class LoginServlet extends HttpServlet {
             userIdCookie.setMaxAge(cookieLifeTime);
             resp.addCookie(userIdCookie);
             resp.addCookie(userNameCookie);
-            System.out.println("!!Success!!");
+            //System.out.println("!!Success!!");
             resp.sendRedirect("/homepage.html");
         } else {
             req.setAttribute("errorMsg", "Incorrect password or name");
